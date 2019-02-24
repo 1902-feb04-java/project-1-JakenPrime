@@ -1,0 +1,46 @@
+.title_bar
+{
+    background: orangered;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    vertical-align: middle;
+    font-size: 25pt;
+    font-weight: bold;
+}
+.sign_out
+{
+    position: absolute;
+    left: 95%;
+    top: 10;
+    font-size: 16pt;
+}
+table
+{
+    width:80%; 
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background: white;
+    border-collapse: collapse
+}
+table, th, td
+{
+    border: 1px solid orangered;
+}
+th
+{
+    text-align: left;
+    height: 50px;
+}
+td
+{
+    height: 30px;
+}
+.reimbur_table
+{
+    border: 5px, solid orangered;
+}
