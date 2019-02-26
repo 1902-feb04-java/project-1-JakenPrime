@@ -10,8 +10,7 @@ CREATE TABLE reimbursements.employees(
 	password VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_employee_id PRIMARY KEY (id),
 	CONSTRAINT u_employee_email_id UNIQUE(email, id),
-	CONSTRAINT fk_emp_manager_id FOREIGN KEY (manager_id) REFERENCES managers.id,
-	CONSTRAINT chk_min_emp_password CHECK(LENGTH(password >=8))
+	CONSTRAINT fk_emp_manager_id FOREIGN KEY (manager_id) REFERENCES reimbursements.managers(id)
 );
 										  
 CREATE TABLE reimbursements.managers(
@@ -21,8 +20,7 @@ CREATE TABLE reimbursements.managers(
 	email VARCHAR(50) NOT NULL,
 	password VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_manager_id PRIMARY KEY (id),
-	CONSTRAINT u_manager_email_id UNIQUE(email, id),
-	CONSTRAINT chk_min_man_password CHECK(LENGTH(password >=8))
+	CONSTRAINT u_manager_email_id UNIQUE(email, id)
 );
 
 CREATE TABLE reimbursements.reimbursements(
@@ -33,12 +31,12 @@ CREATE TABLE reimbursements.reimbursements(
 	receipt BYTEA NOT NULL,
 	status_id INTEGER NOT NULL,
 	CONSTRAINT pk_reimbursement_id PRIMARY KEY (id),
-	CONSTRAINT fk_reimburse_manager_id FOREIGN KEY (manager_id) REFERENCES managers.id,
-	CONSTRAINT fk_reimburse_employee_id FOREIGN KEY (employee_id) REFERENCES employees.id,
-	CONSTRAINT fk_reimburse_status_id FOREIGN KEY (status_id) REFERENCES reimbursement_status.id,
+	CONSTRAINT fk_reimburse_manager_id FOREIGN KEY (manager_id) REFERENCES reimbursements.managers(id),
+	CONSTRAINT fk_reimburse_employee_id FOREIGN KEY (employee_id) REFERENCES reimbursements.employees(id),
+	CONSTRAINT fk_reimburse_status_id FOREIGN KEY (status_id) REFERENCES reimbursements.reimbursement_status(id)
 );
 						
-CREATE TABLE reimbursement.reimbursement_status(
+CREATE TABLE reimbursements.reimbursement_status(
 	id SERIAL NOT NULL,
 	name VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_status_id PRIMARY KEY (id)

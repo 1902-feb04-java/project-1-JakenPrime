@@ -1,27 +1,34 @@
 package com.revature;
 
-import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Please Enter Info");
-        Scanner scanner = new Scanner(System.in);
-        // scanner.useDelimiter(" ");
-
-        String id = scanner.next();
-        String amount = scanner.next();
-        String manager = scanner.next();
-
-        System.out.println("Employee ID: " + id);
-        System.out.println("Reimbursement amount: "+ amount);
-        System.out.println("Manager ID: " + manager);
-        
-        scanner.close();
+        String url = "jdbc:postgresql://localhost:5432:reimbursement_portal";
+        String username = "postgres";
+        String password = "pgAdmin";
+                
+        try(Connection connection = DriverManager.getConnection(url, username, password))
+        {
+        	Statement statement = connection.createStatement();
+        	ResultSet rs = statement.executeQuery("select * from managers");
+        	while(rs.next())
+        	{
+        		System.out.println(rs.getString("id"));
+        		System.out.println(rs.getString("first_name"));
+        		System.out.println(rs.getString("last_name"));      		
+        	}
+        	rs.close();
+        }
+        catch(SQLException e)
+        {
+        	e.printStackTrace();
+        }
     }
 }
