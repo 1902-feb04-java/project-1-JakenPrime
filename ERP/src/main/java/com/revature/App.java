@@ -10,14 +10,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        String url = "jdbc:postgresql://localhost:5432:reimbursement_portal";
+        String url = "jdbc:postgresql://localhost:5432/reimbursement_portal";
         String username = "postgres";
         String password = "pgAdmin";
                 
         try(Connection connection = DriverManager.getConnection(url, username, password))
         {
         	Statement statement = connection.createStatement();
-        	ResultSet rs = statement.executeQuery("select * from managers");
+        	ResultSet rs = statement.executeQuery("select * from reimbursements.managers");
         	while(rs.next())
         	{
         		System.out.println(rs.getString("id"));
