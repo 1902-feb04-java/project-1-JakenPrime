@@ -53,12 +53,3 @@
     font-weight: bold;
 
 }
-.blank_Div
-{
-    background-color: orangered;
-    width: 75px;
-    height: 5000px;
-    top: 0;
-    left: 80%;
-    position: absolute;
-}
