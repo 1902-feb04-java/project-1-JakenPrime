@@ -13,26 +13,27 @@ public class CRUD {
 	static String password = "pgAdmin";
 
 	public static void main(String[] args) {
-
+		
 	}
 
-	public String Search(String email) {
-		String returnString = null;
-		try (Connection connection = DriverManager.getConnection(url, username, password)) {
-			PreparedStatement statement = connection.prepareStatement("select * from managers where email = '?'");
-			statement.setNString(1, (email));
-			ResultSet rs = statement.executeQuery();
-
-			while (rs.next()) {
-				returnString = rs.getString("id");
-				rs.close();
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return returnString;
-
-	}
+//	public String Search(String email) {
+//		String returnString = null;
+//		try (Connection connection = DriverManager.getConnection(url, username, password)) {
+////			PreparedStatement statement = connection.prepareStatement("select * from managers where email = ?");
+////			statement.setNString(1, (email));
+////			ResultSet rs = statement.executeQuery();
+////
+////			while (rs.next()) {
+////				
+////				returnString = rs.getString("first_name");
+////				System.out.println(returnString);
+////				rs.close();
+////			}
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return returnString;
+//	}
 
 }
