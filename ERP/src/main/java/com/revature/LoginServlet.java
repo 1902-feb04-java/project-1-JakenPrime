@@ -17,15 +17,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException 
-	{
-		HttpSession session = request.getSession(false);
-		float amount = Float.parseFloat(request.getParameter("amount"));
-		String comment  = request.getParameter("comment");
-		int id = (int) session.getAttribute("id");
-		
-		CRUD crud = new CRUD();
-		crud.CreateReq(id, amount, 2, comment);
-		request.getRequestDispatcher("employee.html").forward(request, response);	
+	{	
 	}
 
 	@Override

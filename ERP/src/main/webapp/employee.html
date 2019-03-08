@@ -8,21 +8,31 @@
     <link rel="stylesheet" type="text/css" media="screen" href="employee.css">
     <script src="employee.js"></script>
     <style>
-    .sign_out{position: absolute;right: 5%;top: 10;font-size: 16pt;}
-    .button_div{position: absolute; top: 15%; width:80%;}
-    .view_pend{position: absolute;left: 10%;visibility:hidden;}
-    .view_done{position: absolute;left: 25%;visibility:hidden;}
-    .view_emp{position: absolute;left: 40%;visibility:hidden;}
-    .view_mine{position: absolute;left: 55%;visibility:hidden;}
-    .view_info{position:absolute;left:50%;background-color:orangered;color:black;}
+    .title_bar{background: orangered;position: absolute;height: 50px;width: 100%;top: 0;left: 0;color: white;
+    	vertical-align: middle;font-size: 25pt;font-weight: bold;}
+    .sign_out{position: absolute;right: 5%;top: 10;font-size: 16pt;background-color:#FFFFFF;color:black;}
+    .button_div{position: absolute; top: 22%; width:80%;height:40%}
+    .view_pend{position: absolute;left: 5%; top: 10%;visibility:hidden;}
+    .view_done{position: absolute;left: 5%;top:20%;visibility:hidden;}
+    .view_emp{position: absolute;left: 5%;top:30%;visibility:hidden;}
+    .view_mine{position: absolute;left: 5%;top:40%;visibility:hidden;}
+    .new_req{position:absolute; left: 5%;}
+    .view_info{position:absolute;left:47.5%;top:10%;align:middle;background-color:#FFFFFF;color:black;}
+    table{width:70%;position: absolute;top: 20%;left: 20%;background: white;border-collapse: collapse}
+	table, th, td{border: 1px solid orangered;}
+	th{text-align: center;height: 50px;}
+	td{height: 30px;}
+	.reimbur_table{border: 5px, solid orangered;}
     </style>
 </head>
 <body bgcolor = #737373>
     <div id = 'titleBar' class = 'title_bar'>
-        employee_name, employee_id
 		<form action = 'create' method = "post">
         	<input id = 'viewInfo' class = 'view_info' type ="submit" value = "Update Info"></input>
-        </form>        <div id = 'signOut' class = 'sign_out'>Sign Out</div>
+        </form>        
+		<form action = 'logout'>
+        	<input type='submit' id = 'signOut' class = 'sign_out'value='SIGN OUT'>
+        </form>    
     </div>
     <br>
     <div class = 'button_div'>

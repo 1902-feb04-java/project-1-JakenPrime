@@ -10,7 +10,7 @@
     <style>
     .title_bar{background: orangered;position: absolute;height: 50px;width: 100%;top: 0;left: 0;
         color: white;vertical-align: middle;font-size: 25pt;font-weight: bold;}
-    .sign_out{position: absolute;right: 5%;top: 10;font-size: 16pt;}
+    .sign_out{position: absolute;right: 5%;top: 10;font-size: 16pt;background-color:#FFFFFF;color:black;}
     .info_div{position: absolute;top:15%;left:5%;font-size:16pt;}
     .emp_name{background-color:#737373;color:white}
     .emp_id{background-color:#737373;color:white}
@@ -19,8 +19,9 @@
 </head>
 <body bgcolor = #737373>
     <div id = 'titleBar' class = 'title_bar'>
-        employee_name, employee_id
-		        <div id = 'signOut' class = 'sign_out'>Sign Out</div>
+		<form action = 'logout'>
+        	<input type='submit' id = 'signOut' class = 'sign_out'value='SIGN OUT'>
+        </form>    
     </div>
     <div class = 'info_div'>
         <form action = 'update' method = 'post'>

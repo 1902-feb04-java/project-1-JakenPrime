@@ -64,4 +64,24 @@
     <servlet-name>InformationServlet</servlet-name>
     <url-pattern>/info</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.revature.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HomeServelet</display-name>
+    <servlet-name>HomeServelet</servlet-name>
+    <servlet-class>com.revature.HomeServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServelet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
 </web-app>
