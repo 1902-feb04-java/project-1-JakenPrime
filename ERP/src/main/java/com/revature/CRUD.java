@@ -9,31 +9,76 @@ import java.sql.Statement;
 
 public class CRUD {
 	static String url = "jdbc:postgresql://localhost:5432/reimbursement_portal?currentSchema=reimbursements";
-	static String username = "postgres";
-	static String password = "pgAdmin";
+	static String user = "postgres";
+	static String pass = "pgAdmin";
 
-	public static void main(String[] args) {
+	public void CreateReq(int _empID, float _amount, int _status, String _comment)
+	{
+		try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
 		
+		try(Connection connection = DriverManager.getConnection(url, user, pass))
+		{
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("insert into reimbursements (employee_id, amount, status_id, comments) values"
+					+ "("+_empID+","+ _amount+","+_status+",'"+_comment+"')");
+			rs.close();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void UpdatePend(int _id, int _status)
+	{
+		int id = _id;
+		int status = _status;
+		try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+		
+		try(Connection connection = DriverManager.getConnection(url, user, pass))
+		{
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("update reimbursements set status_id = "+status+" where id ="+id);
+			rs.close();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void UpdatePass(int _id, String _password)
+	{
+		int id = _id;
+		String password = _password;
+		try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+		
+		try(Connection connection = DriverManager.getConnection(url, user, pass))
+		{
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("update employees set password = '"+password+"' where id ="+id);
+			rs.close();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
-//	public String Search(String email) {
-//		String returnString = null;
-//		try (Connection connection = DriverManager.getConnection(url, username, password)) {
-////			PreparedStatement statement = connection.prepareStatement("select * from managers where email = ?");
-////			statement.setNString(1, (email));
-////			ResultSet rs = statement.executeQuery();
-////
-////			while (rs.next()) {
-////				
-////				returnString = rs.getString("first_name");
-////				System.out.println(returnString);
-////				rs.close();
-////			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return returnString;
-//	}
 
 }

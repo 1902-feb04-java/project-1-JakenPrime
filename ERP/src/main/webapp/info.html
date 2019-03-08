@@ -1,0 +1,41 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reimbursement Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="info.css">
+    <script src="info.js"></script>
+    <style>
+    .title_bar{background: orangered;position: absolute;height: 50px;width: 100%;top: 0;left: 0;
+        color: white;vertical-align: middle;font-size: 25pt;font-weight: bold;}
+    .sign_out{position: absolute;right: 5%;top: 10;font-size: 16pt;}
+    .info_div{position: absolute;top:15%;left:5%;font-size:16pt;}
+    .emp_name{background-color:#737373;color:white}
+    .emp_id{background-color:#737373;color:white}
+    .emp_email{background-color:#737373;color:white}
+    </style>
+</head>
+<body bgcolor = #737373>
+    <div id = 'titleBar' class = 'title_bar'>
+        employee_name, employee_id
+		        <div id = 'signOut' class = 'sign_out'>Sign Out</div>
+    </div>
+    <div class = 'info_div'>
+        <form action = 'update' method = 'post'>
+            Name:<br>
+            <input id = 'empName' class = 'emp_name' type = 'text' readonly></input><br>
+            ID:<br>
+            <input id = 'empId' class = 'emp_id' type = 'number' readonly></input><br>
+            Email:<br>
+            <input id = 'empEmail' class = 'emp_email' type = 'text' readonly></input><br>
+            Password:<br>
+            <input id ='empPass' class = 'emp_pass' type = 'text' name = 'password' required></input><br>
+            <input id = 'buttonInfo' type = 'submit' value = 'UPDATE'>
+        </form>
+
+    </div>
+    
+</body>
+</html>

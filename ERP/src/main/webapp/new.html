@@ -1,0 +1,35 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reimbursement Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="new.css">
+    <script src="new.js"></script>
+    <style>
+    .title_bar{background: orangered;position: absolute;height: 50px;width: 100%;top: 0;left: 0;color: white;vertical-align: middle;font-size: 25pt;font-weight: bold}
+    .sign_out{position: absolute;right:5%;top: 10;font-size: 16pt;}
+    .new_req{font-size:16pt;position:absolute;top:15%;left:15%;}
+    #submit{background-color: orangered;color:black;width: 120px;height:50px;}
+    </style>
+</head>
+<body bgcolor = #FFFFFF>
+    <div id = 'titleBar' class = 'title_bar'>
+        place_name, place_id 
+        <div id = 'signOut' class = 'sign_out'>Sign Out</div>
+    </div>
+    <br>
+    <div id = 'newReq' class = 'new_req'>
+        <form action = 'login' method = 'GET'>
+            Request Amount:<br>
+            <input name = "amount" id = "amount" type = "number" step='0.01' placeholder = 'AMOUNT' required></input>
+            <br>
+            Request Comments:<br>
+            <textarea name = "comment" id = "comment" rows = "10" cols = "75" placeholder = 'COMMENTS' required></textarea>
+            <br>
+            <input id = 'submit' type ="submit" value = "Submit Request"></input>
+        </form>
+    </div>
+</body>
+</html>

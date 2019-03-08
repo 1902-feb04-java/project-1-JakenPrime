@@ -7,34 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="employee.css">
     <script src="employee.js"></script>
+    <style>
+    .sign_out{position: absolute;right: 5%;top: 10;font-size: 16pt;}
+    .button_div{position: absolute; top: 15%; width:80%;}
+    .view_pend{position: absolute;left: 10%;visibility:hidden;}
+    .view_done{position: absolute;left: 25%;visibility:hidden;}
+    .view_emp{position: absolute;left: 40%;visibility:hidden;}
+    .view_mine{position: absolute;left: 55%;visibility:hidden;}
+    .view_info{position:absolute;left:50%;background-color:orangered;color:black;}
+    </style>
 </head>
 <body bgcolor = #737373>
     <div id = 'titleBar' class = 'title_bar'>
-        employee_name, employee_id <div id = 'signOut' class = 'sign_out'>Sign Out</div>
+        employee_name, employee_id
+		<form action = 'create' method = "post">
+        	<input id = 'viewInfo' class = 'view_info' type ="submit" value = "Update Info"></input>
+        </form>        <div id = 'signOut' class = 'sign_out'>Sign Out</div>
     </div>
     <br>
-    <div>
-        <input id = 'newReq' class = 'new_req' type ="submit" value = "New Request"></input>
+    <div class = 'button_div'>
+    	<input id = 'viewPend' class = 'view_pend' type = 'button' value = 'View Pending'></input>
+    	<input id = 'viewDone' class = 'view_done' type = 'button' value = 'View Resolved'></input>
+    	<input id = 'viewMine' class = 'view_mine' type = 'button' value = 'View Mine'></input>
+    	<input id = 'viewEmp' class = 'view_emp' type = 'button' value = 'Employees'></input>
+    	<form action = 'create' method = "get">
+        	<input id = 'newReq' class = 'new_req' type ="submit" value = "New Request"></input>
+        </form>
     </div>
-    <div id = 'reimburTable' class = 'reimbur_table'>
-        <table style = "border: 1px solid orangered">
+    <div id = 'reimburDiv' class = 'reimbur_table'>
+        <table id = "reimburTable" style = "border: 1px solid orangered">
             <thead>
-                <tr>
-                    <th>Request ID</th>
-                    <th>Reimbursement Status</th>
-                    <th>Request Date</th>
-                    <th>Amount</th>
-                    <th>Comments</th>
-                </tr>
+                
             </thead>
             <tbody>
-                <tr>
-                    <td>14</td>
-                    <td>Pending</td>
-                    <td>2/12/2019</td>
-                    <td>100.00</td>
-                    <td>Client Lunch</td>
-                </tr>
+            
             </tbody>
         </table>
     </div>

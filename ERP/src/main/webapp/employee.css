@@ -11,19 +11,7 @@
     font-size: 25pt;
     font-weight: bold;
 }
-.sign_out
-{
-    position: absolute;
-    left: 95%;
-    top: 10;
-    font-size: 16pt;
-}
-.new_req
-{
-    position: absolute;
-    left: 80%;
-    top: 15%;
-}
+
 table
 {
     width:80%; 
@@ -50,3 +38,6 @@ td
 {
     border: 5px, solid orangered;
 }
+
+
+
